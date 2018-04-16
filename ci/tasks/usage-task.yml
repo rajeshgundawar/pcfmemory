@@ -6,7 +6,6 @@ image_resource:
     repository: mujahidsoft/cfcli 
     tag: 0.1
 inputs:
-#  - name: cf-usage-task
   - name: cfusagerepo
 outputs:
   - name: email 
