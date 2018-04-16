@@ -1,0 +1,15 @@
+---
+platform: linux
+image_resource:
+  type: docker-image
+  source:
+    repository: concourse/buildroot 
+    tag: git
+inputs:
+  - name: email-resource-source
+  - name: cfusagerepo
+  - name: email 
+run:
+  path: cfusagerepo/ci/scripts/email-script.sh
+outputs:
+ - name: email-out

@@ -1,0 +1,58 @@
+jobs:
+- name: cfusage 
+  max_in_flight: 1
+  plan:
+  - get: daily
+    trigger: true
+  - get: cfusagerepo
+  - task: cf-usage-task 
+    file: cfusagerepo/ci/tasks/usage-task.yml
+    params:
+      API_URL: {{API_URL}}
+      USERNAME: {{USERNAME}}
+      PASSWORD: {{PASSWORD}}
+      ORG: {{ORG}}
+      SPACE: {{SPACE}}    
+  - get: email-resource-source
+  - task: email-task
+    file: cfusagerepo/ci/tasks/email-task.yml
+    params:
+      TO: {{TO}}
+      ENV: {{ENV}}
+  - put: send-an-email
+    params:
+      subject: email-out/generated-subject
+      body: email-out/body
+      to: email-out/usr 
+resource_types:
+  - name: email
+    type: docker-image
+    source:
+      repository: pcfseceng/email-resource
+      tag: latest
+resources:
+  - name: email-resource-source
+    type: git
+    source:
+      uri: https://github.com/pivotal-cf/email-resource
+      branch: master
+  - name: send-an-email
+    type: email
+    source:
+      smtp:
+        host: {{SMTP}}
+        port: {{PORT}}
+        username: {{USR}}
+        password: {{PAS}}
+      from: {{USR}}
+  - name: cfusagerepo
+    type: git
+    source:
+      branch: master
+      uri: https://github.com/mujahidsof/cfusagerepo.git
+  - name: daily 
+    type: time
+    source: 
+      interval: 10m
+#       start: 10:50 AM
+#       stop: 11:00 AM

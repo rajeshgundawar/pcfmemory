@@ -1,0 +1,14 @@
+---
+platform: linux
+image_resource:
+  type: docker-image
+  source:
+    repository: mujahidsoft/cfcli 
+    tag: 0.1
+inputs:
+#  - name: cf-usage-task
+  - name: cfusagerepo
+outputs:
+  - name: email 
+run:
+  path: cfusagerepo/ci/scripts/usage-script.sh
