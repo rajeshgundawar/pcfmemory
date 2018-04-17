@@ -13,11 +13,9 @@ jobs:
       PASSWORD: {{PASSWORD}}
       ORG: {{ORG}}
       SPACE: {{SPACE}}    
-  - get: email-resource-source
-#  - task: email-task
-#    file: cfusagerepo/ci/tasks/email-task.yml
-    params:
       TO: {{TO}}
+  - get: email-resource-source
+    params:
       ENV: {{ENV}}
   - put: send-an-email
     params:
@@ -53,6 +51,6 @@ resources:
   - name: daily 
     type: time
     source: 
-      interval: 10m
-#       start: 10:50 AM
-#       stop: 11:00 AM
+#      interval: 10m
+       start: 10:50 AM
+       stop: 11:00 AM
