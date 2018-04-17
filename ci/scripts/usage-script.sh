@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "Loginig into CF CLI"
 cf login -a $API_URL -u $USERNAME -p $PASSWORD -o $ORG -s $SPACE
-echo " Running cf usage report"
+echo "Running cf usage report"
 cf usage-report >usage_report.txt
 mem_usage=$(cat usage_report.txt | grep $ORG| cut -d' ' -f5); echo "$SPACE Usage is $mem_usage"
 mem_quota=$(cat usage_report.txt | grep $ORG| cut -d' ' -f8); echo "$SPACE Quota is $mem_quota"
