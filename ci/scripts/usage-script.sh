@@ -9,5 +9,8 @@ percentage_usage=$((100*$mem_usage/$mem_quota));echo "Percentage of $SPACE  Usag
 date
 echo " Printing Body of Email"
 cat email/body
+echo "$ENV Memory Usage is above Threshold" >email/subject
+echo $TO>email/usr
+cat email/usr
 echo " End of script"
-fi
+

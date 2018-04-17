@@ -14,16 +14,16 @@ jobs:
       ORG: {{ORG}}
       SPACE: {{SPACE}}    
   - get: email-resource-source
-  - task: email-task
-    file: cfusagerepo/ci/tasks/email-task.yml
+#  - task: email-task
+#    file: cfusagerepo/ci/tasks/email-task.yml
     params:
       TO: {{TO}}
       ENV: {{ENV}}
   - put: send-an-email
     params:
-      subject: email-out/generated-subject
-      body: email-out/body
-      to: email-out/usr 
+      subject: email/subject
+      body: email/body
+      to: email/usr 
 resource_types:
   - name: email
     type: docker-image
