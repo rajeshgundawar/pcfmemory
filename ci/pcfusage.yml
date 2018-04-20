@@ -2,7 +2,7 @@ jobs:
 - name: cfusage 
   max_in_flight: 1
   plan:
-  - get: daily
+  - get: dailyR
     trigger: true
   - get: cfusagerepo
   - task: cf-usage-task 
@@ -48,9 +48,9 @@ resources:
     source:
       branch: master
       uri: https://github.com/mujahidsof/pcfmemory.git
-  - name: daily 
+  - name: dailyR 
     type: time
     source: 
 #      interval: 10m
-       start: 10:50 AM
-       stop: 11:00 AM
+       start: 09:40 PM
+       stop: 09:45 PM
