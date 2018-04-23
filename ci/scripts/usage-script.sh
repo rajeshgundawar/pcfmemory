@@ -8,6 +8,8 @@ mem_quota=$(cat usage_report.txt | grep $ORG| cut -d' ' -f8); echo "$SPACE Quota
 percentage_usage=$((100*$mem_usage/$mem_quota)); echo $percentage_usage% is usage of $SPACE
 if [ "$percentage_usage" -lt "90" ]
 then
+ echo "Esiting Memory Usae is $percentage is below threshold"
+ echo "End of Taski"
  exit 0;
 else
  echo "Percentage of $SPACE  Usage is $percentage_usage%">email/body
@@ -18,5 +20,5 @@ else
  cat email/subject
  echo "$TO" >email/usr
  cat email/usr
- echo "End of script"
+ echo "End of task"
 fi
