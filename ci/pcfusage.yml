@@ -12,7 +12,6 @@ jobs:
       USERNAME: {{USERNAME}}
       PASSWORD: {{PASSWORD}}
       ORG: {{ORG}}
-      SPACE: {{SPACE}}    
       ENV: {{ENV}}
       TO: {{TO}}
       THRESHOLD: {{THRESHOLD}}
