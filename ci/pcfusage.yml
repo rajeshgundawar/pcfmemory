@@ -14,11 +14,12 @@ jobs:
       TO: {{TO}}
       THRESHOLD: {{THRESHOLD}}
   - get: email-resource-source
-  - put: send-an-email
-    params:
-      subject: email/subject
-      body: email/body
-      to: email/usr 
+  - try: 
+      put: send-an-email
+      params:
+        subject: email/subject
+        body: email/body
+        to: email/usr 
     on_failure:
        task: BelowThreshold
        config:
