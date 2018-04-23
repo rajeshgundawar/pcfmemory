@@ -10,9 +10,6 @@ if [ "$percentage_usage" -lt "$THRESHOLD" ]
 then
  echo "Existing Memory Usage is $percentage_usage is below threshold"
  echo "End of Task"
-# echo "$TO" >email/usr
-# echo "$ORG Org Current Memory Utlization is $percentage_usage%">email/body
-# echo "$ENV environment $ORG Org Memory Usage is below Threshold $THRESHOLD%" >email/subject
  exit 0;
 else
  echo "$ORG Org Current Memory Utlization is $percentage_usage%">email/body
@@ -25,6 +22,4 @@ else
  cat email/usr
  echo "Done with preparing of Email"
  echo "End of task"
- echo "true">email/trig
- cat email/trig
 fi
