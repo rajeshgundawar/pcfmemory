@@ -11,6 +11,9 @@ then
  echo "Existing Memory Usage is $percentage_usage is below threshold"
  echo "End of Task"
  echo "false">email/trig
+ echo "$TO" >email/usr
+ echo "$ORG Org Current Memory Utlization is $percentage_usage%">email/body
+ echo "$ENV environment $ORG Org Memory Usage is below Threshold $THRESHOLD%" >email/subject
  echo $trig
  cat email/trig
  exit 0;
