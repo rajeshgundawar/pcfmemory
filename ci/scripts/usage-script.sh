@@ -12,7 +12,7 @@ then
  echo "End of Task"
  exit 0;
 else
- echo "Percentage of $ENV Environment $ORG Org Memory  Usage is $percentage_usage%">email/body
+ echo "$ORG Org Current Memory Utlization is $percentage_usage%">email/body
  date
  echo  "Printing Body of Email"
  cat email/body

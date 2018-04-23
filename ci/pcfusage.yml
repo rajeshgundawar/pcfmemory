@@ -16,8 +16,8 @@ jobs:
       TO: {{TO}}
       THRESHOLD: {{THRESHOLD}}
   - get: email-resource-source
-    params:
-      ENV: {{ENV}}
+#    params:
+#      ENV: {{ENV}}
   - put: send-an-email
     params:
       subject: email/subject
