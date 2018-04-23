@@ -1,5 +1,4 @@
 #!/bin/sh
-echo "Loginig into CF CLI"
 cf login -a $API_URL -u $USERNAME -p $PASSWORD -o $ORG
 echo "Running cf usage report"
 cf usage-report >usage_report.txt
@@ -12,7 +11,7 @@ then
  echo "End of Task"
  exit 0;
 else
- echo "Existing Memory Usage is $percentage_usage is above threshold"
+ echo "Existing Memory Usage is $percentage_usage is above threshold:$THRESHOLD"
  echo "Preparing Email content"
  echo "$ORG Org Current Memory Utlization is $percentage_usage%">email/body
  date
