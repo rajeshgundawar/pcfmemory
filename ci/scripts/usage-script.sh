@@ -16,7 +16,7 @@ else
  date
  echo  "Printing Body of Email"
  cat email/body
- echo "$ENV Memory Usage is above Threshold" >email/subject
+ echo "$ENV Memory Usage is above Threshold $THRESHOLD%" >email/subject
  cat email/subject
  echo "$TO" >email/usr
  cat email/usr
