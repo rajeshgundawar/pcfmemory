@@ -9,7 +9,7 @@ percentage_usage=$((100*$mem_usage/$mem_quota)); echo "$percentage_usage% is usa
 if [ "$percentage_usage" -lt "$THRESHOLD" ]
 then
  echo "Existing Memory Usage is $percentage_usage is below threshold"
- echo "End of Taski"
+ echo "End of Task"
  exit 0;
 else
  echo "Percentage of $SPACE  Usage is $percentage_usage%">email/body

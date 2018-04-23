@@ -43,7 +43,7 @@ resources:
         port: {{PORT}}
         username: {{USR}}
         password: {{PAS}}
-      from: {{USR}}
+      from: {{FROM}} 
   - name: cfusagerepo
     type: git
     source:
