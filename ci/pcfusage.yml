@@ -13,6 +13,7 @@ jobs:
       PASSWORD: {{PASSWORD}}
       ORG: {{ORG}}
       SPACE: {{SPACE}}    
+      ENV: {{ENV}}
       TO: {{TO}}
       THRESHOLD: {{THRESHOLD}}
   - get: email-resource-source
