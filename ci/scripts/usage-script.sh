@@ -19,4 +19,4 @@ else
  echo "$TO" >email/usr
  cat email/usr
  echo "End of script"
-fi;
+fi
