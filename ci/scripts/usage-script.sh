@@ -6,7 +6,7 @@ cf usage-report >usage_report.txt
 mem_usage=$(cat usage_report.txt | grep $ORG| cut -d' ' -f5); echo "$SPACE Usage is $mem_usage"
 mem_quota=$(cat usage_report.txt | grep $ORG| cut -d' ' -f8); echo "$SPACE Quota is $mem_quota"
 percentage_usage=$((100*$mem_usage/$mem_quota)); echo "$percentage_usage% is usage of $SPACE"
-if [ "$percentage_usage" -lt "90" ]
+if [ "$percentage_usage" -lt "$THRESHOLD" ]
 then
  echo "Existing Memory Usage is $percentage_usage is below threshold"
  echo "End of Taski"
