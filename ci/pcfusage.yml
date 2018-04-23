@@ -16,9 +16,11 @@ jobs:
       TO: {{TO}}
       THRESHOLD: {{THRESHOLD}}
   - get: email-resource-source
-    trigger: $trig
+    params:
+      trigger: email/trig
   - put: send-an-email
-    trigger: $trig
+    params:
+      trigger: email/trig
     params:
       subject: email/subject
       body: email/body
