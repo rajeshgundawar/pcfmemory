@@ -20,21 +20,6 @@ jobs:
         subject: email/subject
         body: email/body
         to: email/usr 
-    on_failure:
-       task: BelowThreshold
-       config:
-         platform: linux
-         image_resource:
-           type: docker-image
-           source:
-             repository: ubuntu 
-             tag: latest
-         run:
-           path: sh
-           args:
-           - -c
-           - |
-             echo "Below Threshold.... Exiting"
 resource_types:
   - name: email
     type: docker-image
