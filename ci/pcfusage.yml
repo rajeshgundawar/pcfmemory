@@ -13,13 +13,13 @@ jobs:
       ENV: {{ENV}}
       TO: {{TO}}
       THRESHOLD: {{THRESHOLD}}
-  - get: email-resource-source
-  - try: 
-      put: send-an-email
-      params:
-        subject: email/subject
-        body: email/body
-        to: email/usr 
+#  - get: email-resource-source
+#  - try: 
+#      put: send-an-email
+#      params:
+#        subject: email/subject
+#        body: email/body
+#        to: email/usr 
 resource_types:
   - name: email
     type: docker-image
@@ -32,17 +32,17 @@ resources:
     source:
       uri: https://github.com/pivotal-cf/email-resource
       branch: master
-  - name: send-an-email
-    type: email
-    source:
-      smtp:
-        host: {{SMTP}}
-        port: {{PORT}}
-        username: {{USR}}
-        password: {{PAS}}
-      from: {{FROM}} 
+#  - name: send-an-email
+#    type: email
+#    source:
+#      smtp:
+#        host: {{SMTP}}
+#        port: {{PORT}}
+#        username: {{USR}}
+#        password: {{PAS}}
+#      from: {{FROM}} 
   - name: cfusagerepo
     type: git
-    source:
+    source: #https://github.com/rajeshgundawar/pcfmemory.git
       branch: master
-      uri: https://github.com/mujahidsof/pcfmemory.git
+      uri: https://github.com/rajeshgundawar/pcfmemory.git
