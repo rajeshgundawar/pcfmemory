@@ -13,9 +13,10 @@ then
 else
  echo "Existing Memory Usage is $percentage_usage is above threshold:$THRESHOLD"
  echo "Preparing Email content"
- echo "$ORG Org Current Memory Utlization is $percentage_usage%">email/body
  date
- echo "$ENV environment $ORG Org Memory Usage is above Threshold $THRESHOLD%" >email/subject
- echo "$TO" >email/usr
+ subject="$ENV environment $ORG Org Memory Usage is above Threshold $THRESHOLD%"
+ to="$TO" 
+ body="Existing Memory Usage is percentage_usage is above threshold:THRESHOLD"
+ echo $body |mailx -s "$subject" pavan@techolution.com
  echo "End of task"
 fi
