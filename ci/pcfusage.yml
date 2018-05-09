@@ -14,9 +14,9 @@ jobs:
       TO: {{TO}}
       THRESHOLD: {{THRESHOLD}}
 #  - get: email-resource-source
-#  - try: 
-#      put: send-an-email
-#      params:
+  - try: 
+      put: send-an-email
+      params:
 #        subject: email/subject
 #        body: email/body
 #        to: email/usr 
@@ -32,9 +32,9 @@ resources:
     source:
       uri: https://github.com/pivotal-cf/email-resource
       branch: master
-#  - name: send-an-email
-#    type: email
-#    source:
+  - name: send-an-email
+    type: email
+    source:
 #      smtp:
 #        host: {{SMTP}}
 #        port: {{PORT}}
