@@ -35,12 +35,12 @@ resources:
   - name: send-an-email
     type: email
     source:
-#      smtp:
-#        host: {{SMTP}}
-#        port: {{PORT}}
-#        username: {{USR}}
-#        password: {{PAS}}
-#      from: {{FROM}} 
+      smtp:
+        host: {{SMTP}}
+        port: {{PORT}}
+        username: {{USR}}
+        password: {{PAS}}
+      from: {{FROM}} 
   - name: cfusagerepo
     type: git
     source: #https://github.com/rajeshgundawar/pcfmemory.git
