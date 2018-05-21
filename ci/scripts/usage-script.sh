@@ -2,6 +2,7 @@
 cf login -a $API_URL -u $USERNAME -p $PASSWORD -o $ORG
 echo "Running cf usage report"
 cf usage-report >usage_report.txt
+ls -ltra
 mem_usage=$(cat usage_report.txt | grep $ORG| cut -d' ' -f5) 
 mem_quota=$(cat usage_report.txt | grep $ORG| cut -d' ' -f8)
 percentage_usage=$((100*$mem_usage/$mem_quota))
